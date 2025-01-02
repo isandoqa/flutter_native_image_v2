@@ -1,12 +1,18 @@
-# Archiving this repository
-This has been something that I was keep pushing away from me. One of my more successful projects. But the issues are piling up, the pull requests don't get reviewed, and the truth is that I don't have the time and heart for this project anymore. Flutter was new back then. I had a really cool project with some friends, but in the end, the project didn't make it, and we never needed this library further developed.
+# Flutter Native Image v2
 
-So today I decided that I will make this repository an archive and set it to read-only.
+This project is a **fork** of the original [flutter_native_image](https://github.com/btastic/flutter_native_image) by **@btastic**. The original repository has been archived, as its author decided to move on from the project due to time constraints and shifting priorities. 
 
-If you're willing to take ownership over this repository, feel free to contact me.
+### What's New in This Fork?
+This fork, **Flutter Native Image v2**, is updated to support the **latest version of Flutter** and ensure compatibility with modern Flutter projects. The following updates have been made:
+- Upgraded to work seamlessly with Flutter **v3.27.1**.
+- Fixed issues and updated dependencies for better compatibility.
+- Plans for ongoing maintenance and enhancements.
 
-# flutter_native_image
-[![pub package](https://img.shields.io/pub/v/flutter_native_image.svg?label=flutter_native_image&color=blue)](https://pub.dartlang.org/packages/flutter_native_image)
+### Acknowledgements
+We thank the original author and contributors of `flutter_native_image` for their efforts in creating this library, which has been widely used and appreciated by the Flutter community.
+
+# flutter_native_image_v2
+[![pub package](https://img.shields.io/pub/v/flutter_native_image_v2.svg?label=flutter_native_image_v2&color=blue)](https://pub.dartlang.org/packages/flutter_native_image_v2)
 
 Native Flutter Image tools
 
