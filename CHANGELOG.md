@@ -1,3 +1,7 @@
+## [1.0.0+1]
+* Initial release of `flutter_native_image_v2` with support for Flutter 3.27.1.
+* Updated Android and iOS platform support for compatibility with newer Flutter versions.
+
 ## [0.0.6+1]
 * Changed constraints to support flutter 2.20.0
 * Fix for missing transparency after crop (thanks to netgfx)
