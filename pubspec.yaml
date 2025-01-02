@@ -3,7 +3,7 @@ description: A flutter plugin which uses native iOS/Android to resize, compress 
 version: 1.0.0+1
 homepage: https://laurenscodes.space
 issue_tracker: https://github.com/heathscliff334/flutter_native_image/issues
-publish_to: https://pub.dev
+# publish_to: https://pub.dev
 
 dependencies:
   flutter:
