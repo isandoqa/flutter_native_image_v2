@@ -29,7 +29,7 @@ public class FlutterNativeImagePlugin implements FlutterPlugin {
 
   private void teardownChannel() {
     if (methodCallHandler != null) {
-      methodCallHandler.cleanup();
+      //methodCallHandler.cleanup();
       methodCallHandler = null;
     }
     if (channel != null) {
