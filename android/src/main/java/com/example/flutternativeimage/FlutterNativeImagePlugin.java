@@ -5,25 +5,15 @@ import android.content.Context;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.MethodChannel;
-import io.flutter.plugin.common.PluginRegistry;
 
-/**
- * FlutterNativeImagePlugin
- */
 public class FlutterNativeImagePlugin implements FlutterPlugin {
   private static final String CHANNEL_NAME = "flutter_native_image";
   private MethodChannel channel;
-  /**
-   * Plugin registration.
-   */
-  public static void registerWith(PluginRegistry.Registrar registrar) {
-    final FlutterNativeImagePlugin plugin = new FlutterNativeImagePlugin();
-    plugin.setupChannel(registrar.messenger(), registrar.context());
-  }
+  private MethodCallHandlerImpl methodCallHandler;
 
   @Override
   public void onAttachedToEngine(FlutterPlugin.FlutterPluginBinding binding) {
-    setupChannel(binding.getFlutterEngine().getDartExecutor(), binding.getApplicationContext());
+    setupChannel(binding.getBinaryMessenger(), binding.getApplicationContext());
   }
 
   @Override
@@ -33,12 +23,18 @@ public class FlutterNativeImagePlugin implements FlutterPlugin {
 
   private void setupChannel(BinaryMessenger messenger, Context context) {
     channel = new MethodChannel(messenger, CHANNEL_NAME);
-    MethodCallHandlerImpl handler = new MethodCallHandlerImpl(context);
-    channel.setMethodCallHandler(handler);
+    methodCallHandler = new MethodCallHandlerImpl(context);
+    channel.setMethodCallHandler(methodCallHandler);
   }
 
   private void teardownChannel() {
-    channel.setMethodCallHandler(null);
-    channel = null;
+    if (methodCallHandler != null) {
+      methodCallHandler.cleanup();
+      methodCallHandler = null;
+    }
+    if (channel != null) {
+      channel.setMethodCallHandler(null);
+      channel = null;
+    }
   }
 }
